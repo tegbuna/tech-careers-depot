@@ -1,0 +1,48 @@
+
+
+body {
+
+}
+
+.hero {
+    /* Photo of tech globe */
+    background: url('https://i.imgur.com/qSXPKOz.jpg') center;
+    background-size: cover;
+    padding: 4rem 2rem;
+
+    /* Grid styles */
+    display: grid;
+    align-items: center;
+    grid-template-columns: reqpeat(auto-fit, minmax(240px, 1fr));
+    
+    /* Format text color */
+    color: whitesmoke;
+    
+}
+
+.logo {
+    font-family: 'Arvo', serif;
+    font-size: 52px;
+}
+
+h1 {
+    font-family: 'Arvo', serif;
+}
+
+p {
+    font-family: 'Arvo', serif;
+    font-size:30px;   
+}
+
+article {
+    font-family: 'Roboto', serif;
+    font-size:20px;
+}
+
+#browse-careers {
+    font-family: 'Arvo', serif;
+    color: whit
+    
+}
+
+
