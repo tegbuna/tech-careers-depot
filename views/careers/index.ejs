@@ -13,24 +13,25 @@
 <body>
     <!-- Begin hero section here -->
     <section class="hero">
-        <h1 class='logo'> &lt;Tech Career Depot/&gt; </h1>
+        <h1 class='hero-overlay'> &lt;Tech Career Depot/&gt; </h1>
         <p>...find yourself in technology.</p> <br>
         <article>
-            Are you curious about what it takes to get into the IT technology field? Explore tech careers in just one stop and begin a new journey today!
+            <h3>Are you curious about what it takes to get into the IT technology field? Explore tech careers in just one stop and begin a new journey today!</h3>
         </article><br>
     </section>
 
     <div class='container'>
        <h1>Tech Careers</h1> 
             <div style="border: 1px solid grey; margin-bottom:40px; margin-top:40px; padding-bottom:20px; padding-left:20px; padding-right:20px;">
-            <ul>    
+            <ul class='ul'>    
                 <% careers.forEach(function(career){ %>
                     <div class='career-title'>
-                    <li><%- career.title %></li>   
+                    <li class='li'><h3><%- career.title %></h3></li>   
                     </div>
 
                     <div class='career-body'>
                         <li><%- career.description %></li>
+                        <li><a href="show.ejs">Read More About This Career</a></li>
                     </div>
                     <br> <hr>
                     

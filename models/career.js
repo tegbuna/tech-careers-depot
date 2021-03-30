@@ -6,12 +6,8 @@ const careerSchema = new mongoose.Schema ({
         type: String,
         required: true
     },
-   descritpion: {
+   description: {
        type: String
-   },
-   markdown: {
-       type: String,
-       required: true
    },
    ceatedAt: {
        type: Date,
@@ -19,4 +15,4 @@ const careerSchema = new mongoose.Schema ({
    }
 });
 
-module.exports - mongoose.model ('Career', careerSchema);
+module.exports = mongoose.model ('Career', careerSchema);

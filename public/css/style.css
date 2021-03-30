@@ -4,29 +4,80 @@ body {
 
 }
 
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  p, a {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+  }
+  
+  /* Generic styles */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  a {
+    background-color: rgb(184, 182, 182);
+    text-decoration: none;
+    color: white;
+    border-radius: .25rem;
+    text-align: center;
+    display: inline-block;
+    transition: all .3s;
+  }
+  
+  a:hover {
+    opacity: .6;
+  }
+
 .hero {
     /* Photo of tech globe */
     background: url('https://i.imgur.com/qSXPKOz.jpg') center;
     background-size: cover;
     padding: 4rem 2rem;
-
-    /* Grid styles */
+    /* grid styles */
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
     align-items: center;
-    grid-template-columns: reqpeat(auto-fit, minmax(240px, 1fr));
+  }
+  
+  .hero > * {
+    color: white;
+  }
+  
+  .hero > h1 {
+    font-size: 4rem;
+    padding-bottom: 1rem;
+  }
+  
+  .hero > article > p {
+    font-size: 1.5rem;
+    font-weight: 200;
     
-    /* Format text color */
-    color: whitesmoke;
-    
-}
 
-.logo {
+  }
+  
+  .hero > article > a {
+    padding: 1rem;
+    margin-top: .75rem;
+  }
+
+.hero-overlay {
+
     font-family: 'Arvo', serif;
     font-size: 52px;
 }
 
 h1 {
     font-family: 'Arvo', serif;
+}
+
+ul {
+    list-style: none;
+    font-size: large;
 }
 
 p {
@@ -38,11 +89,6 @@ article {
     font-family: 'Roboto', serif;
     font-size:20px;
 }
-
-#browse-careers {
-    font-family: 'Arvo', serif;
-    color: whit
     
-}
 
 

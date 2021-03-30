@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 router.get ('/new', (req, res)  => {
-    res.render('careers/new', { career: new Career() })
+    res.render('careers/new')
 })
 
 router.get('/:id', async (req, res) => {
@@ -20,7 +20,6 @@ router.post('/', async (req, res) =>{
 const career = new Career({
     title: req.body.title,
     description: req.body.description,
-    markdown: req.body.markdown,
 })
 try {
   career = await career.save()
