@@ -4,6 +4,7 @@ const Career = require('./models/career');
 const careersRouter = require('./routes/careers');
 const { Server } = require('mongodb');
 const morgan = require('morgan');
+const methodOverride = require('method-override');
 const port = 3000
 
 
@@ -20,6 +21,7 @@ app.set('view engine', 'ejs')
 app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
 
 
 app.get('/', async (req, res) => {

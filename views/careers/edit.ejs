@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css"/>
 
-    <title> Add A New Career</title>
+    <title> Edit Career</title>
 </head>
 <body>
     <!-- Begin hero section here -->
@@ -19,12 +19,11 @@
     </section>
 
     <div class='container'>
-       <p>Here you can add to the list of careers you'd like to revisit.</p>
 
     <fieldset>
-     <legend class='legend'>Enter New Career</legend>
+     <legend class='legend'>Edit Career</legend>
 
-    <form action="/careers" method=POST>
+    <form action="/careers/<%= career.id %>?_method=PUT" method=POST>
         <div class='form-group'>
             <label for="title"> Title </label><br>
             <input  value='Title' type='text' name='title'  id='title'><br>
@@ -36,14 +35,11 @@
         </div>
         
         
-    
-    <a href="/">Cancel</a> 
+        <a href="/">Cancel</a> 
+        
+        <input class='button' type="submit" value="Save">
 
-     <input class='button' type="submit" value="Save">
-     
-     <a href="/">Return to List</a>  
-
-     
+       
     </form>
      </fieldset>  <br>
 

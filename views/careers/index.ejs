@@ -30,8 +30,15 @@
                     </div>
 
                     <div class='career-body'>
-                        <li><%- career.description %></li>
-                        <li><a href="show.ejs">Read More About This Career</a></li>
+                        <li><%- career.description %></li><br>
+                        
+                        <form action="/careers/<%=career.id %>?_method=PUT" method=POST>
+                            <button type="submit">Edit</button>
+                        </form> <br>
+
+                        <form action="/careers/<%=career.id %>?_method=DELETE" method=POST>
+                        <button type="submit">Delete</button>
+                    </form>
                     </div>
                     <br> <hr>
                     
@@ -40,27 +47,16 @@
                 </ul> 
             </div>
     </div>
-  
-    <br>
 
+
+     <ul>
+         <li> <a href="/careers/show">Read More About These Careers</a> </li> <br>
        
-    <!-- <fieldset>
-     <legend>Choose a career to learn more!</legend>
-<!--    
-    <form action="/careers" method=GET>
-        <label for="Careers">
-            <select name="careers">
-            <option value='data-science'>Data Science</option>
-            <option value='software-engineering'>Software Engineering</option>
-            <option value='uxui-design'>UX/UI Design</option>
-            </select>
-        </label>
-    <!-- *** Need to link  submit to corresponding view-->
-        <!-- <input type="submit" value="Let's Go!">
-    </form>
-     </fieldset>  --> 
-    
-     <a href="/careers/new" class='btn new'> Add a Career</a>
+         <li> <a href="/careers/new" class='btn new'> Add a Career</a> </li>
+     </ul>
+     
+     
+     
 
 </body>
 </html>

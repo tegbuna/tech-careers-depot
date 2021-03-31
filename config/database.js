@@ -5,9 +5,10 @@ require('dotenv/config');
 
 mongoose.connect(process.env.DB_CONNECTION, {
     // avoid depreciation warnings:
-    useNewURLParser: true,
+    useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true 
 });
 // **In order for this code to run and connect to the db we must require it in server.js (8)
 
