@@ -6,11 +6,11 @@ body {
 
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  font-family: 'Arvo', serif;
   }
   
   p, a {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
   }
   
@@ -20,12 +20,14 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   a {
-    background-color: rgb(184, 182, 182);
+    /* background-color: rgb(184, 182, 182); */
     text-decoration: none;
-    color: white;
+    color: black;
+    font-family: 'Arvo', serif;
+    font-size: smaller;
     border-radius: .25rem;
     text-align: center;
-    display: inline-block;
+    display: inline;
     transition: all .3s;
   }
   
@@ -37,6 +39,7 @@ h1, h2, h3, h4, h5, h6 {
     /* Photo of tech globe */
     background: url('https://i.imgur.com/qSXPKOz.jpg') center;
     background-size: cover;
+    box-shadow: 5px 5px 15px 5px black;
     padding: 4rem 2rem;
     /* grid styles */
     display: grid;

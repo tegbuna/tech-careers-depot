@@ -1,15 +1,12 @@
 const { Router } = require('express');
 const express = require('express');
+const career = require('./../models/career');
 const Career = require('./../models/career');
 const router = express.Router();
 
 //GET
 router.get ('/new', (req, res)  => {
     res.render('careers/new')
-})
-
-router.get ('/edit', (req, res)  => {
-    res.render('careers/edit')
 })
 
 router.get('/show', async (req, res) => {
@@ -30,10 +27,6 @@ router.get ('/uxuis', (req, res)  => {
     res.render('careers/uxuis')
 })
 
-router.get ('/edit/:id', async(req, res)  => {
-    const career = await Career.findById(req.params.id)
-    res.render('careers/edit', {career: career})
-})
 
 //POST
 router.post ('/', async (req, res, next) =>{
@@ -41,26 +34,51 @@ router.post ('/', async (req, res, next) =>{
     next()
 }, saveCareerAndRedirect('new'))
 
-//EDIT
+// EDIT
+
 router.put('/edit', async (req, res, next) => {
-req.career = await Career.find(req.params.body)
-next()
-})
+    req.career = await Career.find(req.params.body)
+    next()
+    })
+    
+    function saveCareerAndRedirect(path) {
+        return async(req, res) => {
+           const career = req.career 
+           career.title = req.body.title
+           career.description = req.body.description
+           try {
+              career = await career.save()
+              res.redirect(`/careers/${career.id}`)  
+            } catch (e) {
+                res.render(`careers/${path}`, {career: career})
+            }  
+    
+        }
+    }
+    
 
-function saveCareerAndRedirect(path) {
-    return async(req, res) => {
-       const career = req.career 
-       career.title = req.body.title
-       career.description = req.body.description
-       try {
-          career = await career.save()
-          res.redirect(`/careers/${career.id}`)  
-        } catch (e) {
-            res.render(`careers/${path}`, {career: career})
-        }  
+// //UPDATE
 
+router.put('/:id',  async (req, res) => {
+   let career 
+try {
+    career = await Career.findById(req.params.id)
+    career.title = req.body.title
+    career.description = req.body.description
+    await career.save()
+    res.redirect(`/careers/${career.id}`)
+} catch {
+    if (career == null) {
+        res.redirect('/')
+    } else {
+    res.render('careers/edit', {
+        career: career,
+        errorMessage: 'Error Updating Career"'
+    })
     }
 }
+})
+
 
 //DELETE
 router.delete ('/:id', async(req, res) => {
