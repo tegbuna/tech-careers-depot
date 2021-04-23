@@ -9,8 +9,8 @@ router.get ('/new', (req, res)  => {
     res.render('careers/new')
 })
 
-router.get('/show', async (req, res) => {
-    const career = await Career.find(req.params.body)
+router.get('/:id', async (req, res) => {
+    const career = await Career.findById(req.params.id)
     if (career == null) res.redirect('/')
     res.render('careers/show', { career: career})
 });
@@ -66,7 +66,7 @@ try {
     career.title = req.body.title
     career.description = req.body.description
     await career.save()
-    res.redirect(`/careers/${career.id}`)
+    res.redirect('/')
 } catch {
     if (career == null) {
         res.redirect('/')
