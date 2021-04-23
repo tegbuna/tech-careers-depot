@@ -2,7 +2,6 @@
 const express = require('express');
 const Career = require('./models/career');
 const careersRouter = require('./routes/careers');
-const { Server } = require('mongodb');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const port = 3000
@@ -10,7 +9,7 @@ const port = 3000
 
 // Set up express app 
 const app = express();
-
+require('dotenv').config();
 //Set up DB **- connecting to mongoose (8)
 require('./config/database');
 

@@ -1,7 +1,7 @@
 //Configure Mongoose Module 
 // **- Setup MongoDB Atlas (7)
 const mongoose = require('mongoose');
-require('dotenv/config');
+
 
 mongoose.connect(process.env.DB_CONNECTION, {
     // avoid depreciation warnings:
