@@ -4,7 +4,7 @@ const Career = require('./models/career');
 const careersRouter = require('./routes/careers');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
-const port = 3000
+const port = process.env.PORT||3000
 
 
 // Set up express app 
