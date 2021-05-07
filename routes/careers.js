@@ -36,9 +36,10 @@ router.post ('/', async (req, res, next) =>{
 
 // EDIT
 
-router.put('/edit', async (req, res, next) => {
-    req.career = await Career.find(req.params.body)
-    next()
+router.get('/:id/edit', async (req, res, next) => {
+    const career = await Career.findById(req.params.id)
+    console.log(career);     
+    res.render('careers/edit', {career})
     })
     
     function saveCareerAndRedirect(path) {

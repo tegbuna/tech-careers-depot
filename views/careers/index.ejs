@@ -33,9 +33,7 @@
                         <li><%- career.description %></li><br>
 
                         
-                        <form action="/careers/<%=career.id %>?_method=PUT" method=POST>
-                            <button type="submit">Edit</button>
-                        </form> <br>
+                        <a href="/careers/<%= career.id %>/edit">Edit</a>
 
                         <form action="/careers/<%=career.id %>?_method=DELETE" method=POST>
                         <button type="submit">Delete</button>
